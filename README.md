@@ -1,4 +1,3 @@
-# PCA-PLSDA
 # PCA / PLSDA Shiny Application
 
 ## Overview
