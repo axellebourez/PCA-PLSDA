@@ -1,17 +1,35 @@
 # PCA-PLSDA
-This R script is an interactive Shiny application designed for performing PCA (Principal Component Analysis) and PLSDA (Partial Least Squares Discriminant Analysis) on user-provided CSV data. It provides a user-friendly interface where users can:
+# PCA / PLSDA Shiny Application
 
-Upload Data: Easily load CSV files containing sample data.
+## Overview
+This repository contains a Shiny application for performing **PCA (Principal Component Analysis)** and **PLSDA (Partial Least Squares Discriminant Analysis)** on CSV datasets. The application provides an intuitive interface for uploading data, selecting variables, and visualizing results in both 2D and 3D plots.
 
-Data Preprocessing: Choose the sample and annotation columns, and optionally remove specific samples.
+## Features
+- **Data Upload:** Easily import CSV files with customizable sample and annotation columns.
+- **Data Preprocessing:** Remove unwanted samples and automatically handle missing values by imputing with column means.
+- **Analysis Options:** 
+  - **PCA:** Visualize principal components with interactive scatter plots.
+  - **PLSDA:** Perform discriminant analysis with group differentiation and permutation tests for model validation.
+- **Visualizations:** 
+  - Interactive 2D plots with ellipses for group confidence regions.
+  - 3D scatter plots with ellipsoids for advanced visualization.
+  - Scree plots for explained variance and loadings plots to display variable contributions.
+- **Interactivity:** Built-in tooltips and dynamic controls using Plotly.
 
-Analysis Options: Select between PCA and PLSDA, along with scaling methods (Standard or Pareto).
+## Requirements
+- R (version 4.x or higher recommended)
+- R Packages:
+  - shiny
+  - ggplot2
+  - mixOmics
+  - DT
+  - colourpicker
+  - plotly
+  - ellipse
+  - ggrepel
 
-Visualization: Generate interactive 2D and 3D plots using ggplot2 and Plotly. For 2D plots, the app can overlay ellipses representing the confidence regions for each group, while for 3D plots, it computes ellipsoids.
+You can install the required packages using the following commands in R:
 
-Results & Interpretation: View contributions (scree plots) and loadings plots to understand how variables contribute to the analyses.
-
-Statistical Testing: For PLSDA, the app runs a permutation test to assess model significance.
-
-The script makes use of several powerful R libraries including shiny, ggplot2, mixOmics, DT, colourpicker, plotly, ellipse, and ggrepel to ensure comprehensive data analysis and interactive visualizations.
-
+```R
+install.packages(c("shiny", "ggplot2", "DT", "colourpicker", "plotly", "ellipse", "ggrepel"))
+install.packages("mixOmics")  # mixOmics may require installation from Bioconductor
